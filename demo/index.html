@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamanual Color Picker — Demo</title>
+  <link rel="stylesheet" href="../src/color-picker.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 40px;
+    }
+    h1 { font-size: 24px; font-weight: 700; color: #0f172a; }
+    p { color: #64748b; font-size: 14px; max-width: 400px; text-align: center; line-height: 1.6; }
+    .demo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .demo-swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      border: 2px solid #e2e8f0;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+      background: #3b82f6;
+    }
+    .demo-swatch:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: scale(1.05);
+    }
+    .demo-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #64748b;
+    }
+    .demo-hex {
+      font-family: 'JetBrains Mono', 'SF Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dreamanual Color Picker</h1>
+  <p>A lightweight, zero-dependency color picker with OKLCH gamut clipping support. Click the swatch below to try it.</p>
+  <div class="demo-area">
+    <div class="demo-swatch cp-anchor" id="demoSwatch"></div>
+    <span class="demo-label">Click to open</span>
+    <span class="demo-hex" id="demoHex">#3B82F6</span>
+  </div>
+
+  <script src="../src/color-picker.js"></script>
+  <script>
+    var picker = new DreamanualColorPicker({
+      initialColor: '#3B82F6',
+      onChange: function(hex) {
+        document.getElementById('demoSwatch').style.background = hex;
+        document.getElementById('demoHex').textContent = hex;
+      },
+      onClose: function(hex) {
+        document.getElementById('demoSwatch').style.background = hex;
+        document.getElementById('demoHex').textContent = hex;
+      }
+    });
+
+    document.getElementById('demoSwatch').addEventListener('click', function(e) {
+      e.stopPropagation();
+      picker.open(e.currentTarget, picker.getColor());
+    });
+  </script>
+</body>
+</html>
