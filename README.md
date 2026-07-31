@@ -1,14 +1,3 @@
----
-AIGC:
-  ContentProducer: '001191110102MAD55U9H0F10002'
-  ContentPropagator: '001191110102MAD55U9H0F10002'
-  Label: '1'
-  ProduceID: '4acb2c37-7f0b-4c3d-a45b-458aa5fc1081'
-  PropagateID: '4acb2c37-7f0b-4c3d-a45b-458aa5fc1081'
-  ReservedCode1: 'c266c8a5-1cbb-4b6d-817a-fcda653f57e3'
-  ReservedCode2: 'c266c8a5-1cbb-4b6d-817a-fcda653f57e3'
----
-
 # Dreamanual Color Picker
 
 A lightweight, zero-dependency color picker component with full OKLCH color space support and sRGB gamut clipping.
@@ -117,5 +106,3 @@ When in OKLCH mode, the picker performs sRGB gamut boundary detection for each c
 ## License
 
 MIT
-
-> AI生成
