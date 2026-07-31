@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: '5f0759d1-8a57-4595-87bc-1968173364a5'
-  PropagateID: '5f0759d1-8a57-4595-87bc-1968173364a5'
-  ReservedCode1: '3398768e-1ad2-4289-a4ad-3eb19f912bf6'
-  ReservedCode2: '3398768e-1ad2-4289-a4ad-3eb19f912bf6'
+  ProduceID: '4acb2c37-7f0b-4c3d-a45b-458aa5fc1081'
+  PropagateID: '4acb2c37-7f0b-4c3d-a45b-458aa5fc1081'
+  ReservedCode1: 'c266c8a5-1cbb-4b6d-817a-fcda653f57e3'
+  ReservedCode2: 'c266c8a5-1cbb-4b6d-817a-fcda653f57e3'
 ---
 
 # Dreamanual Color Picker
@@ -24,13 +24,25 @@ A lightweight, zero-dependency color picker component with full OKLCH color spac
 
 ## Screenshots
 
-| RGB Mode | HSL Mode |
-|:---:|:---:|
-| ![RGB Mode](screenshots/rgb-mode.png) | ![HSL Mode](screenshots/hsl-mode.png) |
+### RGB Mode
+![RGB Mode](screenshots/rgb-mode.png)
 
-| OKLCH Mode | HEX Mode |
-|:---:|:---:|
-| ![OKLCH Mode](screenshots/oklch-mode.png) | ![HEX Mode](screenshots/hex-mode.png) |
+The default mode. Pick a color on the SV panel and Hue bar, then fine-tune each RGB channel with gradient sliders. The eyedropper icon on the left lets you sample any color from the screen.
+
+### HSL Mode
+![HSL Mode](screenshots/hsl-mode.png)
+
+Switch to HSL mode via the toggle button. The H slider shows the full hue rainbow; S and L sliders adjust saturation and lightness with real-time gradient previews.
+
+### OKLCH Mode
+![OKLCH Mode](screenshots/oklch-mode.png)
+
+The OKLCH mode provides perceptually uniform color editing. Out-of-sRGB-gamut regions are marked with hatched stripe overlays on each channel slider — dragging is automatically clamped to valid in-gamut values. The hint bar at the bottom explains the grayed-out areas.
+
+### HEX Mode
+![HEX Mode](screenshots/hex-mode.png)
+
+A minimal HEX input field for direct hex code entry. Channel sliders are hidden to keep the UI compact.
 
 ## Quick Start
 
